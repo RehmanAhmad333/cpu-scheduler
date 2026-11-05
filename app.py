@@ -312,7 +312,10 @@ def metrics_html(items):
 CSS = """
 <style>
 #MainMenu, footer {visibility: hidden;}
-.block-container {padding-top: 2rem; max-width: 1080px;}
+.block-container, [data-testid="stMainBlockContainer"] {
+    padding-top: 4.5rem !important;  /* clears Streamlit's fixed 3.75rem header */
+    max-width: 1080px;
+}
 
 /* header */
 .app-title {font-size: clamp(1.45rem, 5.5vw, 1.9rem); font-weight: 700; margin: 0; line-height: 1.2;}
@@ -377,7 +380,7 @@ table.result-table td:first-child {background: #fff; font-weight: 600;}
 
 /* phones */
 @media (max-width: 640px) {
-    .block-container, [data-testid="stMainBlockContainer"] {padding: 1rem .8rem 3rem !important;}
+    .block-container, [data-testid="stMainBlockContainer"] {padding: 4.2rem .8rem 3rem !important;}
     .app-head {margin-bottom: .8rem;}
 
     [data-testid="stForm"] [data-testid="stHorizontalBlock"] {gap: .4rem !important;}
